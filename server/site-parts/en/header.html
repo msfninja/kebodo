@@ -1,0 +1,110 @@
+<header>
+	<div id="desktopHeader">
+		<div class="row2" style="padding: 0 20px;">
+			<div>
+				<div class="logoImg" onclick="window.location.href = '/en';" style="cursor: pointer;">
+					<img src="/images/logo/logo.png" alt="Kebodo logo" height="35px" longdesc="./about/index.html#about-us">
+				</div>
+			</div>
+			<nav class="row">
+				<div class="navBtn {{hdrNavBtnBuilder}}" onclick="window.location.href = '/en/builder';">
+					<div class="row"><img class="navBtnIco" src="/images/icons/keyboard.png"><span class="navBtnTxt">Builder</span></div>
+				</div>
+				<div class="navBtn {{hdrNavBtnForum}}" onclick="window.location.href = '/en/faq';">
+					<div class="row"><img class="navBtnIco" src="/images/icons/forum.png"><span class="navBtnTxt">FAQ</span></div>
+				</div>
+				<div class="navBtn {{hdrNavBtnAbout}}" onclick="window.location.href = '/en/about';">
+					<div class="row"><img class="navBtnIco" src="/images/icons/help.png"><span class="navBtnTxt">About</span></div>
+				</div>
+				<!-- <div class="navBtn {{hdrNavBtnDonate}}" onclick="window.location.href = '/en/donate';">
+					<div class="row"><img class="navBtnIco" src="/images/icons/savings.png"><span class="navBtnTxt">Donate</span></div>
+				</div> -->
+			</nav>
+			<nav class="row">
+				{{headerUserMenu}}
+				<div class="vws"></div>
+				<div class="navDrop" tabindex="0">
+					<div class="navDropBtn"><img class="navBtnIco" src="/images/icons/language.png"></div>
+					<div class="navDropCnt">
+						<div class="row">
+							<div title="English" onclick="window.location.href = window.location.pathname;" class="lang-icon">
+								<img src="/images/icons/lang/png/united-kingdom.png">
+							</div>
+							<div title="Nederlands" onclick="window.location.href = window.location.pathname.replace('en','nl');" class="lang-icon">
+								<img src="/images/icons/lang/png/netherlands.png">
+							</div>
+							<div title="Eesti" onclick="window.location.href = window.location.pathname.replace('en','ee');" class="lang-icon">
+								<img src="/images/icons/lang/png/estonia.png">
+							</div>
+						</div>
+					</div>
+				</div>
+			</nav>
+		</div>
+	</div>
+
+	<div id="mobileHeader">
+		<div class="row2">
+			<div class="logoImg" onclick="window.location.href = '/en';" style="cursor: pointer;">
+				<img src="/images/logo/logo.png" alt="Kebodo logo" width="auto" height="35px" longdesc="/about/index.html#about-us">
+			</div>
+			<div id="mobileHeaderBtnOpen" style="font-size: 150%;">
+				<img class="hdrIco" src="/images/icons/menu.png">
+			</div>
+		</div>
+	</div>
+
+	<div id="mobileHeaderContent">
+		<div class="row2">
+			<div class="logoImg" onclick="window.location.href = '/en';" style="cursor: pointer;">
+				<img src="/images/logo/logo.png" alt="Kebodo logo" width="auto" height="35px" longdesc="/about/index.html#about-us">
+			</div>
+			<div id="mobileHeaderBtnClose" style="font-size: 150%;">
+				<img class="hdrIco" src="/images/icons/menu-open.png">
+			</div>
+		</div>
+
+		<div class="ws25"></div>
+
+		<nav class="column1">
+			<div class="navBtn {{hdrNavBtnHome}}" onclick="window.location.href = '/en';">
+				<div class="row" style="justify-content: initial;"><img class="navBtnIco" src="/images/icons/home.png"><span class="navBtnTxt">Home</span></div>
+			</div>
+			<div class="navBtn {{hdrNavBtnBuilder}}" onclick="window.location.href = '/en/builder';">
+				<div class="row" style="justify-content: initial;"><img class="navBtnIco" src="/images/icons/keyboard.png"><span class="navBtnTxt">Builder</span></div>
+			</div>
+			<div class="navBtn {{hdrNavBtnForum}}" onclick="window.location.href = '/en/forum';">
+				<div class="row" style="justify-content: initial;"><img class="navBtnIco" src="/images/icons/forum.png"><span class="navBtnTxt">FAQ</span></div>
+			</div>
+			<div class="navBtn {{hdrNavBtnAbout}}" onclick="window.location.href = '/en/about';">
+				<div class="row" style="justify-content: initial;"><img class="navBtnIco" src="/images/icons/help.png"><span class="navBtnTxt">About</span></div>
+			</div>
+			<!-- <div id="mobileNavBtnContact" class="navBtn" onclick="window.location.href = '/en/donate';">
+				<div class="row" style="justify-content: initial;"><img class="navBtnIco" src="/images/icons/savings.png"><span class="navBtnTxt">Donate</span></div>
+			</div> -->
+		</nav>
+
+		<div class="ws50"></div>
+
+		<nav class="column1">
+			{{headerUserMenuM}}
+			<div class="vws"></div>
+			<div class="navDrop" tabindex="0">
+				<div class="row" style="justify-content: initial;"><img class="navBtnIco" src="/images/icons/language.png"><span class="navBtnTxt">Lang</span></div>
+				<div class="navDropCnt">
+					<div style="margin-top: 10px;" class="row">
+						<div title="English" onclick="window.location.href = window.location.pathname;" class="lang-icon">
+							<img src="/images/icons/lang/png/united-kingdom.png">
+						</div>
+						<div title="Nederlands" onclick="window.location.href = window.location.pathname.replace('en','nl');" class="lang-icon">
+							<img src="/images/icons/lang/png/netherlands.png">
+						</div>
+						<div title="Eesti" onclick="window.location.href = window.location.pathname.replace('en','ee');" class="lang-icon">
+							<img src="/images/icons/lang/png/estonia.png">
+						</div>
+					</div>
+				</div>
+			</div>
+		</nav>
+	</div>
+</header>

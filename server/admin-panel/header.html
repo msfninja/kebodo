@@ -1,0 +1,185 @@
+<div id="privacy_consent" class="popup">
+	<div class="row2">
+		<div></div>
+		<div>Privacy Notice</div>
+		<div onclick="document.getElementById('privacy_consent').style.display = 'none'; document.cookie = 'PR_CONSENT=1; path=/';"><i class="fas fa-times"></i></div>
+	</div>
+
+	<div class="ws25"></div>
+
+	<p>By visiting our website you agree that your IP address is being collected for statistical and marketing purposes.</p>
+</div>
+<script type="text/javascript">
+	var getCookie = (name) => {
+		var nameEQ = name + '=';
+		var ca = document.cookie.split(';');
+		for(var i = 0; i < ca.length; i++) {
+			var c = ca[i];
+			while(c.charAt(0) == ' ') c = c.substring(1,c.length);
+			if(c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+		}
+		return null;
+	};
+
+	if(getCookie('PR_CONSENT') == '1') {
+		document.getElementById('privacy_consent').style.display = 'none';
+	}
+	else {
+		document.getElementById('privacy_consent').style.display = 'block';
+	}
+</script>
+<header>
+	<div id="desktopHeader">
+		<div class="row2" style="padding: 0 20px;">
+			<div>
+				<div class="logoImg row" onclick="window.location.href = '/{{admin}}';" style="cursor: pointer;">
+					<img src="/images/logo/logo.png" alt="Kebodo logo" height="35px" longdesc="./about/index.html#about-us">
+					<div>|Admin</div>
+				</div>
+			</div>
+			<nav class="row">
+				<div class="navBtn {{hdrNavBtnForum}}" onclick="window.location.href = '/{{admin}}/builder';">
+					<div class="row"><img class="navBtnIco" src="/images/icons/keyboard.png"><span class="navBtnTxt">Builder</span></div>
+				</div>
+				<div class="navBtn {{hdrNavBtnBuilder}}" onclick="window.location.href = '/{{admin}}/dom';">
+					<div class="row"><img class="navBtnIco" src="/images/icons/code.png"><span class="navBtnTxt">Code</span></div>
+				</div>
+				<div class="navBtn {{hdrNavBtnForum}}" onclick="window.location.href = '/{{admin}}/data';">
+					<div class="row"><img class="navBtnIco" src="/images/icons/chart.png"><span class="navBtnTxt">Data</span></div>
+				</div>
+				<div class="navBtn {{hdrNavBtnForum}}" onclick="window.location.href = '/{{admin}}/settings';">
+					<div class="row"><img class="navBtnIco" src="/images/icons/settings.png"><span class="navBtnTxt">Settings</span></div>
+				</div>
+			</nav>
+			<nav class="row">
+				<div class="navDrop" tabindex="0">
+					<div class="navDropBtn"><img class="navBtnIco" src="/images/icons/admin.png"></div>
+					<div class="navDropCnt">
+						<div class="navBtn" onclick="window.location.href = '/admin';">
+							<div class="row" style="justify-content: initial;"><img class="navBtnIco" src="/images/icons/user.png"><span class="navBtnTxt">Admin</span></div>
+						</div>
+						<div class="navBtn" onclick="signOutAdmin();">
+							<div class="row" style="justify-content: initial;"><img class="navBtnIco" src="/images/icons/logout.png"><span class="navBtnTxt">Sign Out</span></div>
+						</div>
+					</div>
+				</div>
+				<div class="vws"></div>
+				<div class="navDrop" tabindex="0">
+					<div class="navDropBtn"><img class="navBtnIco" src="/images/icons/language.png"></div>
+					<div class="navDropCnt">
+						<div class="row">
+							<div title="English" onclick="window.location.href = window.location.pathname;" class="lang-icon">
+								<img src="/images/icons/lang/png/united-kingdom.png">
+							</div>
+						</div>
+					</div>
+				</div>
+			</nav>
+
+			<!-- <div id="desktopHeaderSettings">
+				<div class="ws25"></div>
+				<div class="hrg1"></div>
+				<div class="ws25"></div>
+
+				<nav>
+					<div class="row">
+						<div class="navBtnTxt">Dark mode</div>
+						<div>
+							<label id="darktModeDesktop" class="switch">
+								<input type="checkbox">
+								<div class="switchBtn"></div>
+							</label>
+						</div>
+					</div>
+				</nav>
+			</div> -->
+		</div>
+	</div>
+
+	<div id="mobileHeader">
+		<div class="row2">
+			<div class="logoImg" onclick="window.location.href = '/{{admin}}';" style="cursor: pointer;">
+				<img src="/images/logo/logo.png" alt="Kebodo logo" width="auto" height="35px" longdesc="/about/index.html#about-us">
+			</div>
+			<div id="mobileHeaderBtnOpen" style="font-size: 150%;">
+				<img class="hdrIco" src="/images/icons/menu.png">
+			</div>
+		</div>
+	</div>
+
+	<div id="mobileHeaderContent">
+		<div class="row2">
+			<div class="logoImg" onclick="window.location.href = '/{{admin}}';" style="cursor: pointer;">
+				<img src="/images/logo/logo.png" alt="Kebodo logo" width="auto" height="35px" longdesc="/about/index.html#about-us">
+			</div>
+			<div id="mobileHeaderBtnClose" style="font-size: 150%;">
+				<img class="hdrIco" src="/images/icons/menu-open.png">
+			</div>
+		</div>
+
+		<div class="ws25"></div>
+
+		<nav class="column1">
+			<div class="navBtn {{hdrNavBtnHome}}" onclick="window.location.href = '/{{admin}}';">
+				<div class="row" style="justify-content: initial;"><img class="navBtnIco" src="/images/icons/home.png"><span class="navBtnTxt">Home</span></div>
+			</div>
+			<div class="navBtn {{hdrNavBtnForum}}" onclick="window.location.href = '/{{admin}}/builder';">
+				<div class="row" style="justify-content: initial;"><img class="navBtnIco" src="/images/icons/keyboard.png"><span class="navBtnTxt">Builder</span></div>
+			</div>
+			<div class="navBtn {{hdrNavBtnBuilder}}" onclick="window.location.href = '/{{admin}}/dom';">
+				<div class="row" style="justify-content: initial;"><img class="navBtnIco" src="/images/icons/code.png"><span class="navBtnTxt">Code</span></div>
+			</div>
+			<div class="navBtn {{hdrNavBtnForum}}" onclick="window.location.href = '/{{admin}}/data';">
+				<div class="row" style="justify-content: initial;"><img class="navBtnIco" src="/images/icons/chart.png"><span class="navBtnTxt">Data</span></div>
+			</div>
+			<div class="navBtn {{hdrNavBtnForum}}" onclick="window.location.href = '/{{admin}}/settings';">
+				<div class="row" style="justify-content: initial;"><img class="navBtnIco" src="/images/icons/settings.png"><span class="navBtnTxt">Settings</span></div>
+			</div>
+		</nav>
+
+		<div class="ws50"></div>
+
+		<nav class="column1">
+			<div class="navDrop" tabindex="0">
+					<div class="row" style="justify-content: initial;" class="navDropBtn"><img class="navBtnIco" src="/images/icons/admin.png"><span class="navBtnTxt">User</span></div>
+					<div class="navDropCnt">
+						<div class="navBtn" onclick="window.location.href = '/{{admin}}';">
+							<div class="row" style="justify-content: initial;"><img class="navBtnIco" src="/images/icons/user.png"><span class="navBtnTxt">Admin</span></div>
+						</div>
+						<div class="navBtn" onclick="signOutAdmin();">
+							<div class="row" style="justify-content: initial;"><img class="navBtnIco" src="/images/icons/logout.png"><span class="navBtnTxt">Sign Out</span></div>
+						</div>
+					</div>
+				</div>
+				<div class="vws"></div>
+				<div class="navDrop" tabindex="0">
+					<div class="row" style="justify-content: initial;" class="navDropBtn"><img class="navBtnIco" src="/images/icons/language.png"><span class="navBtnTxt">Lang</span></div>
+					<div class="navDropCnt">
+						<div style="margin-top: 10px;" class="row">
+							<div title="English" onclick="window.location.href = window.location.pathname;" class="lang-icon">
+								<img src="/images/icons/lang/png/united-kingdom.png">
+							</div>
+						</div>
+					</div>
+				</div>
+		</nav>
+
+		<!-- <div class="ws"></div>
+		<div class="hrg"></div>
+		<div class="ws"></div>
+
+		<nav id="mobileHeaderSettings">
+			<div class="row">
+				<div class="navBtnTxt">
+					<div>Dark mode</div>
+				</div>
+				<div>
+					<label id="darkModeMobile" class="switch">
+						<input type="checkbox">
+						<div class="switchBtn"></div>
+					</label>
+				</div>
+			</div>
+		</nav> -->
+	</div>
+</header>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ee" dir="ltr">
+	<head>
+		{{metaCnt}}
+		<meta name="description" content="Kebodo foorum. Esita küsimus, saa vastus.">
+		<title>{{pageTitle}}</title>
+		{{hdrCnt}}
+	</head>
+	<body onload="bodyLoad();">
+		<div align="center" style="font-family: 'Space Mono', monospace; font-size: 30px; top: 100px; color: #fff; text-shadow: 0 0 10px rgba(255,255,255,1); text-align: center; z-index: 99999; opacity: 1; visibility: visible; display: block;"><noscript>Teie brauseris on JavaScripti keelatud või see ei toeta seda.<br><br>Kui soovite meie teenust kasutada, lubage palun JavaScripti või lülitage mõni muu JavaScripti toetav brauser.</noscript></div>
+		<div id="cnt">
+			{{pageHeader}}
+			<main>
+				<section class="headerBg" style="background: #121212;"></section>
+				<section class="header" id="forum">
+					<div class="ws200"></div>
+
+					<div class="h1 headerTxt">Foorum</div>
+
+					<div class="ws50"></div>
+
+					<div class="h4 headerTxt">
+						Esita küsimus, saa vastus
+					</div>
+
+					<div class="ws200"></div>
+
+					<div class="h2" onclick="window.location.href = '#forum-search'" style="cursor: pointer;" title="Scroll down"><i class="fas fa-chevron-circle-down" style="color: #00a08f;"></i></div>
+				</section>
+
+				<section id="forum-search">
+					<div class="ws100"></div>
+
+					<div class="h1">Otsi küsimused</div>
+
+					<div class="hr2"></div>
+					<div class="ws50"></div>
+
+					//content
+
+					<div class="ws100"></div>
+				</section>
+			</main>
+			{{pageFooter}}
+		</div>
+		{{bCnt}}
+	</body>
+</html>

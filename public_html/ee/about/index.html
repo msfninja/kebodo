@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ee" dir="ltr">
+	<head>
+		{{metaCnt}}
+		<title>{{pageTitle}}</title>
+		{{hdrCnt}}
+	</head>
+	<body onload="bodyLoad();">
+		<div align="center" style="font-family: 'Space Mono', monospace; font-size: 30px; top: 100px; color: #fff; text-shadow: 0 0 10px rgba(255,255,255,1); text-align: center; z-index: 99999; opacity: 1; visibility: visible; display: block;"><noscript>Teie brauseris on JavaScripti keelatud või see ei toeta seda.<br><br>Kui soovite meie teenust kasutada, lubage palun JavaScripti või lülitage mõni muu JavaScripti toetav brauser.</noscript></div>
+		<div id="cnt">
+			{{pageHeader}}
+			<main>
+				<section class="headerBg" style="background: url('/images/keyboard_6.jpg'); background-repeat: no-repeat; background-size: cover; background-position: center;"></section>
+				<section class="header" id="about">
+					<div class="ws200"></div>
+
+					<div class="h1 headerTxt">Meist</div>
+
+					<div class="ws50"></div>
+
+					<div class="h4 headerTxt">
+						Lisateave meie kohta
+					</div>
+
+					<div class="ws200"></div>
+
+					<div class="h2" onclick="window.location.href = '#intro'" style="visibility: hidden; cursor: pointer;" title="Scroll down"><i class="fas fa-chevron-circle-down" style="color: #00a08f;"></i></div>
+				</section>
+			</main>
+			{{pageFooter}}
+		</div>
+		{{bCnt}}
+	</body>
+</html>

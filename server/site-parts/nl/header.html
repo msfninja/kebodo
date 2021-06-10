@@ -1,0 +1,165 @@
+<div id="privacy_consent" class="popup">
+	<div class="row2">
+		<div></div>
+		<div>Privacy Notitie</div>
+		<div onclick="document.getElementById('privacy_consent').style.display = 'none'; document.cookie = 'PR_CONSENT=1; path=/';"><i class="fas fa-times"></i></div>
+	</div>
+
+	<div class="ws25"></div>
+
+	<p>Bij het bezoeken van onze website gaat u er mee akkoord dat uw IP adres wordt bewaard voor statistische and marketische doelen.</p>
+</div>
+<script type="text/javascript">
+	if(document.cookie == 'PR_CONSENT=1') {
+		document.getElementById('privacy_consent').style.display = 'none';
+	}
+	else {
+		document.getElementById('privacy_consent').style.display = 'none';
+	}
+</script>
+<header>
+	<div id="desktopHeader">
+		<div class="row2" style="padding: 0 20px;">
+			<div>
+				<div class="logoImg" onclick="window.location.href = '/nl';" style="cursor: pointer;">
+					<img src="/images/logo/logo.png" alt="Kebodo logo" height="35px" longdesc="./about/index.html#about-us">
+				</div>
+			</div>
+			<nav class="row">
+				<div class="navBtn {{hdrNavBtnBuilder}}" onclick="window.location.href = '/nl/builder';">
+					<div class="row"><img class="navBtnIco" src="/images/icons/keyboard.png"><span class="navBtnTxt">Bouwer</span></div>
+				</div>
+				<div class="navBtn {{hdrNavBtnForum}}" onclick="window.location.href = '/nl/forum';">
+					<div class="row"><img class="navBtnIco" src="/images/icons/forum.png"><span class="navBtnTxt">Forum</span></div>
+				</div>
+				<div class="navBtn {{hdrNavBtnAbout}}" onclick="window.location.href = '/nl/about';">
+					<div class="row"><img class="navBtnIco" src="/images/icons/help.png"><span class="navBtnTxt">Over ons</span></div>
+				</div>
+				<div class="navBtn" onclick="window.location.href = '/nl#contact';">
+					<div class="row"><img class="navBtnIco" src="/images/icons/email.png"><span class="navBtnTxt">Contact</span></div>
+				</div>
+			</nav>
+			<nav class="row">
+				{{headerUserMenu}}
+				<div class="vws"></div>
+				<div class="navDrop" tabindex="0">
+					<div class="navDropBtn"><img class="navBtnIco" src="/images/icons/language.png"></div>
+					<div class="navDropCnt">
+						<div class="row">
+							<div title="English" onclick="window.location.href = window.location.pathname.replace('nl','en');" class="lang-icon">
+								<img src="/images/icons/lang/png/united-kingdom.png">
+							</div>
+							<div title="Nederlands" onclick="window.location.href = window.location.pathname;" class="lang-icon">
+								<img src="/images/icons/lang/png/netherlands.png">
+							</div>
+							<div title="Eesti" onclick="window.location.href = window.location.pathname.replace('nl','ee');" class="lang-icon">
+								<img src="/images/icons/lang/png/estonia.png">
+							</div>
+						</div>
+					</div>
+				</div>
+			</nav>
+
+			<!-- <div id="desktopHeaderSettings">
+				<div class="ws25"></div>
+				<div class="hrg1"></div>
+				<div class="ws25"></div>
+
+				<nav>
+					<div class="row">
+						<div class="navBtnTxt">Dark mode</div>
+						<div>
+							<label id="darktModeDesktop" class="switch">
+								<input type="checkbox">
+								<div class="switchBtn"></div>
+							</label>
+						</div>
+					</div>
+				</nav>
+			</div> -->
+		</div>
+	</div>
+
+	<div id="mobileHeader">
+		<div class="row2">
+			<div class="logoImg" onclick="window.location.href = '/nl';" style="cursor: pointer;">
+				<img src="/images/logo/logo.png" alt="Kebodo logo" width="auto" height="35px" longdesc="/about/index.html#about-us">
+			</div>
+			<div id="mobileHeaderBtnOpen" style="font-size: 150%;">
+				<img class="hdrIco" src="/images/icons/menu.png">
+			</div>
+		</div>
+	</div>
+
+	<div id="mobileHeaderContent">
+		<div class="row2">
+			<div class="logoImg" onclick="window.location.href = '/nl';" style="cursor: pointer;">
+				<img src="/images/logo/logo.png" alt="Kebodo logo" width="auto" height="35px" longdesc="/about/index.html#about-us">
+			</div>
+			<div id="mobileHeaderBtnClose" style="font-size: 150%;">
+				<img class="hdrIco" src="/images/icons/menu-open.png">
+			</div>
+		</div>
+
+		<div class="ws25"></div>
+
+		<nav class="column1">
+			<div class="navBtn {{hdrNavBtnHome}}" onclick="window.location.href = '/nl';">
+				<div class="row" style="justify-content: initial;"><img class="navBtnIco" src="/images/icons/home.png"><span class="navBtnTxt">Home</span></div>
+			</div>
+			<div class="navBtn {{hdrNavBtnBuilder}}" onclick="window.location.href = '/nl/builder';">
+				<div class="row" style="justify-content: initial;"><img class="navBtnIco" src="/images/icons/keyboard.png"><span class="navBtnTxt">Builder</span></div>
+			</div>
+			<div class="navBtn {{hdrNavBtnForum}}" onclick="window.location.href = '/nl/forum';">
+				<div class="row" style="justify-content: initial;"><img class="navBtnIco" src="/images/icons/forum.png"><span class="navBtnTxt">Forum</span></div>
+			</div>
+			<div class="navBtn {{hdrNavBtnAbout}}" onclick="window.location.href = '/nl/about';">
+				<div class="row" style="justify-content: initial;"><img class="navBtnIco" src="/images/icons/help.png"><span class="navBtnTxt">Over ons</span></div>
+			</div>
+			<div id="mobileNavBtnContact" class="navBtn" onclick="window.location.href = '/nl#contact';">
+				<div class="row" style="justify-content: initial;"><img class="navBtnIco" src="/images/icons/email.png"><span class="navBtnTxt">Contact</span></div>
+			</div>
+		</nav>
+
+		<div class="ws50"></div>
+
+		<nav class="column1">
+			{{headerUserMenuM}}
+			<div class="vws"></div>
+			<div class="navDrop" tabindex="0">
+				<div class="row" style="justify-content: initial;"><img class="navBtnIco" src="/images/icons/language.png"><span class="navBtnTxt">Taal</span></div>
+				<div class="navDropCnt">
+					<div style="margin-top: 10px;" class="row">
+						<div title="English" onclick="window.location.href = window.location.pathname.replace('nl','en');" class="lang-icon">
+							<img src="/images/icons/lang/png/united-kingdom.png">
+						</div>
+						<div title="Nederlands" onclick="window.location.href = window.location.pathname;" class="lang-icon">
+							<img src="/images/icons/lang/png/netherlands.png">
+						</div>
+						<div title="Eesti" onclick="window.location.href = window.location.pathname.replace('nl','ee');" class="lang-icon">
+							<img src="/images/icons/lang/png/estonia.png">
+						</div>
+					</div>
+				</div>
+			</div>
+		</nav>
+
+		<!-- <div class="ws"></div>
+		<div class="hrg"></div>
+		<div class="ws"></div>
+
+		<nav id="mobileHeaderSettings">
+			<div class="row">
+				<div class="navBtnTxt">
+					<div>Dark mode</div>
+				</div>
+				<div>
+					<label id="darkModeMobile" class="switch">
+						<input type="checkbox">
+						<div class="switchBtn"></div>
+					</label>
+				</div>
+			</div>
+		</nav> -->
+	</div>
+</header>

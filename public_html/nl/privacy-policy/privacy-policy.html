@@ -1,0 +1,19 @@
+<div id="privacy_consent" class="popup">
+	<div class="row">
+		<div></div>
+		<div>Privacy Notice</div>
+		<div onclick="document.getElementById('privacy_consent').style.display = 'none'; document.cookie = 'PR_CONSENT=1; path=/';"><i class="fas fa-times"></i></div>
+	</div>
+
+	<div class="ws25"></div>
+
+	<p>By visiting our website you agree that your IP address is being collected for statistical and marketing purposes.</p>
+</div>
+<script type="text/javascript">
+	if(document.cookie == 'PR_CONSENT=1; path=/') {
+		document.getElementById('privacy_consent').style.display = 'none';
+	}
+	else {
+		document.getElementById('privacy_consent').style.display = 'block';
+	}
+</script>

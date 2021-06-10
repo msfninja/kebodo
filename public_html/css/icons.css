@@ -1,0 +1,19 @@
+.navBtnIco {
+	display: inline-block;
+	margin: 0 7px 0 0;
+	width: 24px;
+	text-align: center;
+}
+
+@media screen and (max-width: 950px) {
+	.navBtnIco {
+		display: block;
+	}
+}
+
+.hdrIco {
+	display: block;
+	margin: 0 7px 0 0;
+	width: 40px;
+	text-align: center;
+}

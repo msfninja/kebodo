@@ -1,0 +1,99 @@
+*Switches:*
+
+
+Cherry:
+
+
+Red: SMD/Black housing/Silent/Silent SMD
+
+Silver: SMD/Black Housing/
+
+Black: SMD/Black housing/Silent/Silent SMD
+
+Brown: SMD/Black housing
+
+Grey: Black housing
+
+Clear: Black housing
+
+Blue: SMD/
+
+Green: Black housing
+
+White: Black housing
+
+
+Gateron:
+
+
+Yellow: Milky(Full/Half)/Clear top
+
+Red: Milky(Full/Half)/Clear top
+
+Black: Milky(Full/Half)/Clear top
+
+Clear: Milky(Full/Half)/Clear top
+
+Brown: Milky(Full/Half)/Clear top
+
+Blue: Milky(Full/Half)/Clear top
+
+Green: Milky(Full/Half)/Clear top
+
+White: Milky(Full/Half)/Clear top
+
+
+Kailh:
+
+
+BOX Reds
+
+BOX Blacks
+
+BOX Pink
+
+BOX Browns: Silent
+
+BOX Whites
+
+BOX Jades
+
+BOX Navy
+
+
+*PCB'S*
+
+
+60%
+
+DZ60: RGB & hotswap/ANSI
+
+KBD6X
+
+BM60: RGB/hotswap
+
+GK61x: xs
+
+
+65%
+
+DZ65
+
+KBD67: Rev2/MKII Hotswap/MKII Soldered
+
+Maja
+
+
+75%
+
+KBD75
+
+
+80%
+
+KBD8X
+
+
+95%
+
+KBD19X

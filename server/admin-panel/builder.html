@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+	<head>
+		{{metaCnt}}
+		<title>{{pageTitle}}</title>
+		{{hdrCnt}}
+	</head>
+	<body onload="bodyLoad();">
+		<div align="center" style="font-family: 'Space Mono', monospace; font-size: 30px; top: 100px; color: #fff; text-shadow: 0 0 10px rgba(255,255,255,1); text-align: center; z-index: 99999; opacity: 1; visibility: visible; display: block;"><noscript>Your browser has JavaScript disabled or does not support it.<br><br>If you want to use our service, please enable JavaScript or switch to another browser that supports JavaScript.</noscript></div>
+		<div id="cnt">
+			<aside></aside>
+			{{pageHeader}}
+			<main>
+				<section class="headerBg" style="background: #121212; background-repeat: no-repeat; background-size: cover; background-position: center;"></section>
+				<section class="header-no-row">
+					<div class="ws50"></div>
+
+					<div class="h3">Builder</div>
+					<div class="hr2"></div>
+					<div class="ws25"></div>
+
+					<div class="txthex212121 flexHalf">
+						<form class="" method="post" action="/{{admin}}/configure/builder/parts">
+							<div class="h3">PCB</div>
+							<div>Add each item on a new line</div>
+							<div class="ws"></div>
+							<textarea placeholder="Add items..." class="txthex313131" name="submit-pcb-items">{{load-pcb-items}}</textarea>
+							<div class="ws"></div>
+							<button type="submit">Save</button>
+						</form>
+					</div>
+
+					<div class="ws25"></div>
+
+					<div class="txthex212121 flexHalf">
+						<form class="" method="post" action="/{{admin}}/configure/builder/switches">
+							<div class="h3">Switches</div>
+							<div>Add each item on a new line</div>
+							<div class="ws"></div>
+							<textarea placeholder="Add items..." class="txthex313131" name="submit-switches-items">{{load-switches-items}}</textarea>
+							<div class="ws"></div>
+							<button type="submit">Save</button>
+						</form>
+					</div>
+
+					<div class="ws25"></div>
+
+					<div class="txthex212121 flexHalf">
+						<form class="" method="post" action="/{{admin}}/configure/builder/plate">
+							<div class="h3">Plate</div>
+							<div>Add each item on a new line</div>
+							<div class="ws"></div>
+							<textarea placeholder="Add items..." class="txthex313131" name="submit-plate-items">{{load-plate-items}}</textarea>
+							<div class="ws"></div>
+							<button type="submit">Save</button>
+						</form>
+					</div>
+
+					<div class="ws25"></div>
+
+					<div class="txthex212121 flexHalf">
+						<form class="" method="post" action="/{{admin}}/configure/builder/stabilizers">
+							<div class="h3">Stabilizers</div>
+							<div>Add each item on a new line</div>
+							<div class="ws"></div>
+							<textarea placeholder="Add items..." class="txthex313131" name="submit-stabilizers-items">{{load-stabilizers-items}}</textarea>
+							<div class="ws"></div>
+							<button type="submit">Save</button>
+						</form>
+					</div>
+
+					<div class="ws25"></div>
+
+					<div class="txthex212121 flexHalf">
+						<form class="" method="post" action="/{{admin}}/configure/builder/case">
+							<div class="h3">Case</div>
+							<div>Add each item on a new line</div>
+							<div class="ws"></div>
+							<textarea placeholder="Add items..." class="txthex313131" name="submit-case-items">{{load-case-items}}</textarea>
+							<div class="ws"></div>
+							<button type="submit">Save</button>
+						</form>
+					</div>
+
+					<div class="ws25"></div>
+
+					<div class="txthex212121 flexHalf">
+						<form class="" method="post" action="/{{admin}}/configure/builder/lube">
+							<div class="h3">Lube</div>
+							<div>Add each item on a new line</div>
+							<div class="ws"></div>
+							<textarea placeholder="Add items..." class="txthex313131" name="submit-lube-items">{{load-lube-items}}</textarea>
+							<div class="ws"></div>
+							<button type="submit">Save</button>
+						</form>
+					</div>
+
+					<div class="ws25"></div>
+
+					<div class="txthex212121 flexHalf">
+						<form class="" method="post" action="/{{admin}}/configure/builder/keycaps">
+							<div class="h3">Keycaps</div>
+							<div>Add each item on a new line</div>
+							<div class="ws"></div>
+							<textarea placeholder="Add items..." class="txthex313131" name="submit-keycaps-items">{{load-keycaps-items}}</textarea>
+							<div class="ws"></div>
+							<button type="submit">Save</button>
+						</form>
+					</div>
+
+					<div class="ws100"></div>
+				</section>
+			</main>
+		</div>
+		{{bCnt}}
+	</body>
+</html>

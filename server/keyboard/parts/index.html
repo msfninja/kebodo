@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<link rel="preconnect" href="https://fonts.gstatic.com">
+		<link href="https://fonts.googleapis.com/css2?family=Roboto&family=Space+Mono&display=swap" rel="stylesheet">
+		<link rel="icon" type="img/png" href="/images/logo/icon.png">
+		<link rel="stylesheet" type="text/css" href="/css/admin/keyboard-parts.css">
+		<title>Admin | Kebodo</title>
+		<script src="https://kit.fontawesome.com/ca27e311bf.js" crossorigin="anonymous"></script>
+	</head>
+	<body>
+		<!-- <header style="position: fixed;top: 0;bottom: 0;left: 0;width: auto;padding: 1rem;background: #212121;z-index: 9999;">
+		</header> -->
+		<center>
+			<!-- <form action="/admin-new-login-details" method="post">
+				<div class="h1">Set new admin username and password</div>
+				<div class="hr1"></div>
+				<div class="ws25"></div>
+
+				<input type="text" name="username" placeholder="New username" required>
+				<input type="password" name="password" placeholder="New password" required>
+				<input type="submit" name="submit" value="Submit">
+			</form> -->
+			<div class="ws200"></div>
+			<div>
+				<hr>
+				<p><b>Note:</b> By clicking Save changes, you make unrecoverable permanent changes!</p>
+				<hr><br>
+
+				<form method="post" action="/admin/keyboard-parts/submit">
+					<div id="parts">
+						<div id="newPartArea"></div>
+					</div>
+
+					<br><div class="row"><hr><div id="addPart" class="addPartBtn" title="Create new part"><div class="h1"><i class="fas fa-plus-square"></i></div></div><hr></div><br>
+
+					<input style="box-shadow: 0 0 10px rgba(0,0,0,.35); position: fixed; right: 20px; bottom: 10px; z-index: 9999;" type="submit" name="submit" value="Save changes">
+				</form>
+
+				<br><br><br>
+			</div>
+		</center>
+
+		<script src="/js/admin/keyboard-parts.js" type="text/javascript"></script>
+		<script type="text/javascript">
+			window.onbeforeunload = () => {
+			    return true;
+			};
+		</script>
+	</body>
+</html>
