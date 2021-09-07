@@ -21,6 +21,6 @@ app:
   - name: "Discussions"
     icon: "chat-left"
     path: "https://github.com/msfninja/kebodo/discussions"
-    nav: false
+    nav: no
 server:
   port: '85'

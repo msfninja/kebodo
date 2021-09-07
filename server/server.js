@@ -1,6 +1,9 @@
 // (c) 2020 - 2021 Kebodo
 // Kebodo's server source code
 
+// Note:
+// This file is in active development, and a lot of features are yet to be added.
+
 'use strict';
 
 const // modules
@@ -33,6 +36,9 @@ const // basic operation functions
 			match: arr.length > 0,
 			size: arr.length
 		};
+	},
+	format = s => {
+		return s.replace(/\s/g,'-').replace(/[^a-z0-9]/gi,'').toLowerCase();
 	};
 
 try { config = YAML.parse(rd(`${dir}/config.yml`)); } catch (e) { throw e; }
@@ -46,22 +52,22 @@ const // operation functions
 	render = (res,req,h,m) => {
 		let
 			html = '',
-			accept = ['r'],
+			accept = ['a','b','r','x'],
 			modes = m.split('');
 
-		if (compare(modes,accept).size === accept.length) {
+		if (compare(modes,accept).match) {
 			if (modes.includes('r')) {
 				html = rd(h).replace(/\{component\.meta\}/g,rd(`${dir}/server/client/component/meta.xhtml`)).replace(/\{component\.link\}/g,rd(`${dir}/server/client/component/link.xhtml`)).replace(/\{component\.script\}/g,rd(`${dir}/server/client/component/script.xhtml`)).replace(/\{component\.noscript\}/g,rd(`${dir}/server/client/component/noscript.xhtml`)).replace(/\{component\.header\}/g,rd(`${dir}/server/client/component/header.xhtml`)).replace(/\{component\.footer\}/g,rd(`${dir}/server/client/component/footer.xhtml`)).replace(/\{component\.loader\}/g,rd(`${dir}/server/client/component/loader.xhtml`)).replace(/\{component\.doctype\}/g,rd(`${dir}/server/client/component/doctype.xhtml`));
 				html = html.replace(/\{app\.name\}/g,config.app.name).replace(/\{app\.lname\}/g,config.app.lname).replace(/\{app\.desc\}/g,config.app.desc).replace(/\{app\.version\}/g,config.app.version).replace(/\{app\.release\}/g,config.app.release).replace(/\{app.nav.tabs\}/g,createNav());
 			}
+			if (modes.includes('a')) {
+				html = html.replace(/\{token\}/g,token);
+			}
 		}
 
-		// html = html.replace(/[\n\t]/g,'');
+		html = html.replace(/[\n\t]/g,''); // some sort of custom minifying...
 
 		return html;
-	},
-	format = s => {
-		return s.replace(/\s/g,'-').replace(/[^a-z0-9]/gi,'').toLowerCase();
 	};
 
 
@@ -96,8 +102,20 @@ const // site functions
 		return html;
 	};
 
-function Root() { // root function
-	//
+function Root(res) { // root function
+	this.verify = (usr,psw) => {
+		//
+	};
+	this.direct = c => {
+		if (c) term(res,302,{'Location':`/${token}`});
+		else term(res,200,{'Content-Type','application/xhtml+xml'},render(res,req,`${dir}/server/root/index.xhtml`,'ar'));
+	};
+	this.login = c => {
+		if (c) {
+			term(res,200,{'Content-Type':'application/xhtml+xml'},render(res,req,`${dir}/server/root/panel/index.xhtml`,'arx'));
+		}
+		else term(res,200,{'Content-Type','application/xhtml+xml'},render(res,req,`${dir}/server/root/index.xhtml`,'ar'));
+	};
 }
 
 const // http server
@@ -107,14 +125,16 @@ const // http server
 				q = url.parse(req.url,true),
 				p = q.pathname,
 				ip = req.connection.remoteAddress.replace(/\:+[a-z]{4}\:/i,''),
-				root = new Root(),
+				root = new Root(res),
 				cookie = cookies(req);
 
 			if (p === '/') term(res,200,{'Content-Type':'application/xhtml+xml'},render(res,req,`${dir}/public/index.xhtml`,'r'));
 			else if (p.split('/')[1] === 'builder') term(res,200,{'Content-Type':'application/xhtml+xml'},render(res,req,`${dir}/public/builder/index.xhtml`,'r'));
 			else if (p.split('/')[1] === 'builder') term(res,200,{'Content-Type':'application/xhtml+xml'},render(res,req,`${dir}/public/forum/index.xhtml`,'r'));
 			else if (p.split('/').includes('root')) {
-				//
+				if (p === '/root' && req.method === 'GET') {
+					term(res,200,{'Content-Type':'application/xhtml+xml'},render(res,req,`${dir}/server/root/index.xhtml`,'ar'));
+				}
 			}
 			else {
 				const h = path.resolve(dir,p.replace(/^\/*/,'public/'));

@@ -4,6 +4,11 @@ Release 0.0.0-alpha 2021-09-04 msfninja <msfninja@airmail.cc>:
 	The first release of Kebodo. Summing up all the development starting from the project's creation in 2020 to the date of this release
 
 	Added:
+	 * Client/server
+	   - Client
+	     + Web application
+	     + Server
+	 * Scraper
 
 	Changed:
 

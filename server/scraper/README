@@ -1,0 +1,5 @@
+Hi,
+
+Info for scraper:
+ - Use this directory and any custom subdirectories for the scraper itself
+ - The scraper should write data in JSON format to disk to output/data.json, for now. Not soon, but it's on the todo list, I will adopt it for MongoDB.

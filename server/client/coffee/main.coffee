@@ -1,4 +1,4 @@
-'use strict';
+'use strict'
 
 qs = (e) -> return document.querySelectorAll e
 
