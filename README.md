@@ -1,6 +1,6 @@
-# Kebodo | A custom keyboard builder
+# Kebodo | A Custom Keyboard Builder
 
-Kebodo is an open source project developed by [msfninja](https://github.com/msfninja), [StefanTech1](https://github.com/StefanTech1) and other collaborators. The project's aim is to provide an easy to use online utility that features a custom keyboard builder, and assets of custom keyboard builds that link to vendors from whom you can buy the keyboard parts.
+Kebodo is an open source project developed by [msfninja](https://github.com/msfninja), [StefanTech1](https://github.com/StefanTech1) and other collaborators. This project's aim is to provide an easy to use online utility that features a custom keyboard builder, and assets of custom keyboard builds that provide and link to vendors from whom you can purchase the keyboard parts.
 
 The original site is hosted at http://143.176.32.149:85. This repository contains everything necessary for the client-side and server-side applications to operate.
 
@@ -19,24 +19,24 @@ The original site is hosted at http://143.176.32.149:85. This repository contain
 					<li><a href="#git">Git</a></li>
 					<li><a href="#mongodb">MongoDB</a></li>
 					<ol>
-						<li><a href="#">Initiation</a></li>
-						<li><a href="#">Configuration</a></li>
+						<li><a href="#initiation">Initiation</a></li>
+						<li><a href="#configuration">Configuration</a></li>
 					</ol>
 				</ol>
 				<li><a href="#cloning">Cloning</a></li>
 				<li><a href="#server">Server</a></li>
 				<ol>
-					<li><a href="#">Initiation</a></li>
-					<li><a href="#">Configuration</a></li>
-					<li><a href="#">Sass</a></li>
-					<li><a href="#">CoffeeScript</a></li>
+					<li><a href="#initiation-1">Initiation</a></li>
+					<li><a href="#configuration-1">Configuration</a></li>
+					<li><a href="#sass">Sass</a></li>
+					<li><a href="#coffeescript">CoffeeScript</a></li>
 				</ol>
-				<li><a href="#">Scraper</a></li>
+				<li><a href="#scraper">Scraper</a></li>
 				<ol>
-					<li><a href="#">Initiation</a></li>
-					<li><a href="#">Configuration</a></li>
+					<li><a href="#initiation-2">Initiation</a></li>
+					<li><a href="#configuration-2">Configuration</a></li>
 				</ol>
-				<li><a href="#collaborators">Support</a></li>
+				<li><a href="#support">Support</a></li>
 				<li><a href="#collaborators">Collaborators</a></li>
 			</ol>
 		</td>
