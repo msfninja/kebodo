@@ -1,8 +1,8 @@
 // (c) 2020 - 2021 Kebodo
-// Kebodo's server source code
+// server source code
 
-// Note:
-// This file is in active development, and a lot of features are yet to be added.
+// note:
+// this file is in active development, and a lot of features are yet to be added.
 
 'use strict';
 
