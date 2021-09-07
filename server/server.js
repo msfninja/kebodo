@@ -108,13 +108,13 @@ function Root(res) { // root function
 	};
 	this.direct = c => {
 		if (c) term(res,302,{'Location':`/${token}`});
-		else term(res,200,{'Content-Type','application/xhtml+xml'},render(res,req,`${dir}/server/root/index.xhtml`,'ar'));
+		else term(res,200,{'Content-Type':'application/xhtml+xml'},render(res,req,`${dir}/server/root/index.xhtml`,'ar'));
 	};
 	this.login = c => {
 		if (c) {
 			term(res,200,{'Content-Type':'application/xhtml+xml'},render(res,req,`${dir}/server/root/panel/index.xhtml`,'arx'));
 		}
-		else term(res,200,{'Content-Type','application/xhtml+xml'},render(res,req,`${dir}/server/root/index.xhtml`,'ar'));
+		else term(res,200,{'Content-Type':'application/xhtml+xml'},render(res,req,`${dir}/server/root/index.xhtml`,'ar'));
 	};
 }
 
