@@ -563,7 +563,7 @@ html body #cnt .column-right-baseline {
   justify-content: right;
   align-items: baseline;
 }
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 1290px) {
   html body #cnt .flex-space-around-stretch {
     flex-direction: column;
   }
@@ -985,7 +985,7 @@ html body #cnt .ws250, html body #cnt .fiws250, html body #cnt .fws250 {
 html body #cnt .vws250, html body #cnt .fivws250, html body #cnt .fvws250 {
   width: 250px;
 }
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 1290px) {
   html body #cnt .fws5 {
     width: 5px;
   }
@@ -1909,7 +1909,7 @@ html body #cnt .desktop {
 html body #cnt .mobile {
   display: none;
 }
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 1290px) {
   html body #cnt .desktop {
     display: none;
   }
@@ -1923,7 +1923,7 @@ html body #cnt .hover {
 html body #cnt .hover:hover {
   opacity: 1;
 }
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 1290px) {
   html body #cnt .hover {
     opacity: 1;
   }
@@ -1963,8 +1963,53 @@ html body #cnt .delay {
   opacity: 0;
   transition: all 500ms cubic-bezier(0.48, 0, 0.58, 1) 0ms;
 }
+html body #cnt .code {
+  user-select: text;
+  -o-user-select: text;
+  -xv-user-select: text;
+  -ah-user-select: text;
+  -hp-user-select: text;
+  -ro-user-select: text;
+  -tc-user-select: text;
+  -ms-user-select: text;
+  -mso-user-select: text;
+  -rim-user-select: text;
+  -moz-user-select: text;
+  -wap-user-select: text;
+  -atsc-user-select: text;
+  -konq-user-select: text;
+  -khtml-user-select: text;
+  -apple-user-select: text;
+  -webkit-user-select: text;
+  -prince-user-select: text;
+}
+html body #cnt .code-inline {
+  user-select: text;
+  -o-user-select: text;
+  -xv-user-select: text;
+  -ah-user-select: text;
+  -hp-user-select: text;
+  -ro-user-select: text;
+  -tc-user-select: text;
+  -ms-user-select: text;
+  -mso-user-select: text;
+  -rim-user-select: text;
+  -moz-user-select: text;
+  -wap-user-select: text;
+  -atsc-user-select: text;
+  -konq-user-select: text;
+  -khtml-user-select: text;
+  -apple-user-select: text;
+  -webkit-user-select: text;
+  -prince-user-select: text;
+  border-radius: 5px;
+  font-family: monospace;
+  font-size: 14pt;
+  padding: 3px;
+  background-color: #1a1a1aff;
+}
 
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 1290px) {
   html body #cnt header #desktop {
     display: none;
   }
