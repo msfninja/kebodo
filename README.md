@@ -1,16 +1,25 @@
 # Kebodo | A Custom Keyboard Builder
 
-###### Kebodo is an open source project licensed under GNU GPL v2.0, created by [msfninja](https://github.com/msfninja) and furiousace123. Our main goal is to provide a seamless and easy to use online utility offering a builder for custom keyboards.
+Kebodo is an open source project licensed under the GNU GPLv2, created by [msfninja](https://github.com/msfninja) and . The project's aim is to provide a seamless and easy to use online utility offering a builder for custom keyboards.
 
 Currently, the original and official project is hosted at http://143.176.32.149/. This repository contains everything necessary for the client-side and server-side application.
 
-Table of contents:
-
-* [Notice](#notice)
-* [Installation](#installation)
-* [Initiating Server](#initiating-server)
-* [Server Configuration](#server-configuration)
-* [Support](#support)
+<table>
+	<tr>
+		<th>Table of Contents</th>
+	</tr>
+	<tr>
+		<td>
+			<ol>
+				<li><a href="#notice">Notice</a></li>
+				<li><a href="#"></a></li>
+				<li><a href="#"></a></li>
+				<li><a href="#"></a></li>
+				<li><a href="#"></a></li>
+			</ol>
+		</td>
+	</tr>
+</table>
 
 ## Notice
 
@@ -20,7 +29,7 @@ The original and official project will always be at http://143.176.32.149/, unle
 
 ## Installation
 
-To get started, you need to install [npm](https://www.npmjs.com/) onto your system, since the server application is built on the [Node.js framework](https://nodejs.org/). To install npm, run the following command:
+To get started, you need to install [npm](https://www.npmjs.com/) onto your system, since the server application is built on the [Node.js framework](https://nodejs.org/). To install npm, run the following:
 
 #### Ubuntu/Debian:
 
@@ -28,14 +37,15 @@ To get started, you need to install [npm](https://www.npmjs.com/) onto your syst
 sudo apt-get update && sudo apt-get install npm
 ```
 
-All necessary node modules are included in the project, so there is no need to install them manually. After installing npm, you will need to install [nodemon](https://nodemon.io/). (It is not necessary to install it, but all further instructions will use nodemon and assume you have it installed).
+After installing npm, you will need to install a few node modules and [nodemon](https://nodemon.io/) that do not come with npm by default.
 
-To install nodemon, run the following command:
+To install the modules and nodemon, run the following:
 
 ```bash
-npm install -g nodemon
+npm install color && npm install ip && npm install -g nodemon
 ```
-After installing nodemon, clone the [Kebodo repository](https://github.com/msfninja/Kebodo) to your desired directory:
+
+Now, clone the [Kebodo repository](https://github.com/msfninja/Kebodo) to your desired directory:
 
 ```bash
 git clone https://github.com/msfninja/Kebodo.git

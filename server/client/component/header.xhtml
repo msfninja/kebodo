@@ -1,0 +1,59 @@
+<header>
+	<div id="desktop">
+		<div onclick="window.location.pathname = '/';" class="logo-header"></div>
+		<div class="row-center-center">
+			<div>
+				<nav class="row-center-center">{app.nav.tabs}</nav>
+			</div>
+			<div class="vws100" />
+			<div>
+				<nav class="row-center-center">
+					<div class="btn-nav-drop">
+						<div id="btn-nav-header-search" class="btn">
+							<div class="ico">
+								<span><i class="bi bi-search"></i></span>
+							</div>
+							<div class="cnt nowrap">
+								<div id="header-search">
+									<div>
+										<input id="input-header-search" type="text" name="query" placeholder="Search..." />
+									</div>
+									<div id="btn-header-search" onclick="search();">
+										<span><i class="bi bi-search"></i></span>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="btn-nav-drop">
+						<div class="btn">
+							<div class="ico">
+								<span><i class="bi bi-person"></i></span>
+							</div>
+							<div class="cnt">
+								<div class="item" onclick="window.location.pathname = '/sign-in';">
+									<div class="ico">
+										<span><i class="bi bi-box-arrow-in-right"></i></span>
+									</div>
+									<div class="txt">
+										<span>Sign in</span>
+									</div>
+								</div>
+								<div class="item" onclick="window.location.pathname = '/join';">
+									<div class="ico">
+										<span><i class="bi bi-person-plus"></i></span>
+									</div>
+									<div class="txt">
+										<span>Join</span>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</nav>
+			</div>
+		</div>
+	</div>
+	<div id="mobile"></div>
+</header>
+<div id="header-area"></div>

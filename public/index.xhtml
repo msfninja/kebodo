@@ -1,0 +1,55 @@
+{component.doctype}
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+	<head>
+		{component.meta}
+		{component.link}
+		{component.script}
+		<title>{app.name}</title>
+	</head>
+	<body>
+		{component.noscript}
+		{component.loader}
+		<div style="opacity: 0;" id="cnt">
+			{component.header}
+			<main>
+				<section id="intro-bg" style="background-image: url('/client/media/img/def/kb_0012.png') !important;"></section>
+				<section id="intro">
+					<div>
+						<div data-type-stop="true" class="intro-h1 type">{app.name}</div>
+						<div data-type-delay="0.6" data-type-speed="0.05" class="intro-h5 type">{app.desc}</div>
+					</div>
+					<div class="flex-space-evenly-center">
+						<div data-delay="0.2" class="delay">
+							<div class="btn-ico-show" onclick="window.location.pathname = '/builder';">
+								<div class="ico">
+									<span><i class="bi bi-bricks"></i></span>
+								</div>
+								<div class="txt">
+									<span>Builder</span>
+								</div>
+								<div class="show">
+									<span><i class="bi bi-arrow-right"></i></span>
+								</div>
+							</div>
+						</div>
+						<div class="fvws25" />
+						<div data-delay="0.3" class="delay">
+							<div class="btn-ico-show" onclick="window.location.pathname = '/builder';">
+								<div class="ico">
+									<span><i class="bi bi-keyboard"></i></span>
+								</div>
+								<div class="txt">
+									<span>Assets</span>
+								</div>
+								<div class="show">
+									<span><i class="bi bi-arrow-right"></i></span>
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
+			</main>
+			{component.footer}
+		</div>
+	</body>
+</html>

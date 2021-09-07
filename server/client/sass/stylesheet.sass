@@ -1,0 +1,553 @@
+@use 'sass:math'
+@use 'sass:color'
+@use 'sass:list'
+@use 'sass:map'
+
+@import url('https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css')
+
+@font-face
+	font-family: 'Roboto'
+	src: url('/client/media/font/Roboto.ttf')
+
+@font-face
+	font-family: 'Roboto Mono'
+	src: url('/client/media/font/RobotoMono.ttf')
+
+@function adjust($color,$n)
+	$var: 10
+	@return color.adjust($color,$red: $var * $n,$green: $var * $n,$blue: $var * $n)
+
+$font:					[normal normal 400 14pt normal ('Roboto', sans-serif)]
+$font-body:				[normal normal 400 14pt normal ('Roboto', sans-serif)]
+$font-heading:			[normal normal 700 100% normal ('Roboto Mono', monospace)]
+$font-input:			[normal normal 400 100% normal ('Roboto', sans-serif)]
+
+$background:			('0': #0c0032)
+$background-hover:		('0': #1c1042)
+$background-active:		('0': #09002f)
+$background-focus:		('0': #1c1042)
+$background-accent:		('0': #3500d3)
+
+@for $i from -3 through 3
+	@if $i != 0
+		$background:		map.set($background,		'#{$i}',	adjust(map.get($background,			'0'),$i))
+		$background-hover:	map.set($background-hover,	'#{$i}',	adjust(map.get($background-hover,	'0'),$i))
+		$background-active:	map.set($background-active,	'#{$i}',	adjust(map.get($background-active,	'0'),$i))
+		$background-focus:	map.set($background-focus,	'#{$i}',	adjust(map.get($background-focus,	'0'),$i))
+		$background-accent:	map.set($background-accent,	'#{$i}',	adjust(map.get($background-accent,	'0'),$i))
+
+$color:					#ffff
+$color-hover:			#ffff
+$color-accent:			#5722f5
+
+$transition:			all 150ms cubic-bezier(.25,.1,.25,1) 0ms
+$transition-btn:		all 250ms cubic-bezier(.25,.1,.25,1) 0ms
+$transition-delay:		all 500ms cubic-bezier(.48,0,.58,1) 0ms
+
+$header-hover-area:		50px
+
+$logo-width:			434
+$logo-height:			125
+
+$mobile-max-width:		1000px
+$mobile-max-height:		100vh // unset
+
+$flex-directions:		['row' 'column' 'flex']
+$justified-contents:	['space-around' 'space-between' 'space-evenly' 'center' 'flex-start' 'flex-end' 'left' 'right']
+$aligned-items:			['stretch' 'center' 'flex-start' 'flex-end' 'baseline']
+
+$vendors:				['o' 'xv' 'ah' 'hp' 'ro' 'tc' 'ms' 'mso' 'rim' 'moz' 'wap' 'atsc' 'konq' 'khtml' 'apple' 'webkit' 'prince']
+
+@mixin cross-p($prop,$value)
+	#{$prop}: #{$value}
+	@each $vendor in $vendors
+		-#{$vendor}-#{$prop}: #{$value}
+
+@mixin cross-v($prop,$value)
+	#{$prop}: #{$value}
+	@each $vendor in $vendors
+		#{$prop}: -#{$vendor}-#{$value}
+
+@mixin input()
+	border: none
+	border-radius: 0
+	font: list.nth($font-input,1) list.nth($font-input,2) list.nth($font-input,3) list.nth($font-input,4)/list.nth($font-input,5) list.nth($font-input,6)
+	background-color: map.get($background,'2')
+	color: #ffff
+	cursor: text
+	outline: none
+
+	&:hover
+		background-color: map.get($background-hover,'2')
+
+	&:focus
+		background-color: #ffff
+		color: #000f
+
+@mixin input-m()
+	@include input()
+
+	font-size: 18pt
+	padding: 5px
+
+@mixin input-s()
+	@include input()
+
+	font-size: 14pt
+	padding: 5px
+
+@mixin flexbox($flex-direction,$justify-content,$align-items)
+	display: flex
+	flex-direction: #{$flex-direction}
+	justified-content: #{$justify-content}
+	align-items: #{$align-items}
+
+html
+	@include cross-p('touch-action','manipulation')
+
+	scroll-behavior: smooth
+
+	body
+		margin: 0
+		background-color: map.get($background,'0')
+		overflow-y: hidden
+
+		#loader
+			#loader-ico
+				//
+
+		#cnt
+			@include cross-p('user-select','none')
+
+			font: list.nth($font-body,1) list.nth($font-body,2) list.nth($font-body,3) list.nth($font-body,4)/list.nth($font-body,5) list.nth($font-body,6)
+			opacity: 0
+			background-color: map.get($background,'0')
+			color: $color
+			transition: all 500ms cubic-bezier(.25,.1,.25,1) 0ms
+
+			::selection
+				background: #{map.get($background-accent,'0')}88
+				color: #ffff
+
+			*
+				@include cross-p('appearance','none')
+
+				transition: $transition
+
+			@each $flex-direction in $flex-directions
+				@each $justify-content in $justified-contents
+					@each $align-items in $aligned-items
+						@if $flex-direction != 'flex'
+							.#{$flex-direction}-#{$justify-content}-#{$align-items}
+								display: flex
+								flex-direction: #{$flex-direction}
+								justify-content: #{$justify-content}
+								align-items: #{$align-items}
+						@else
+							.#{$flex-direction}-#{$justify-content}-#{$align-items}
+								@extend .row-#{$justify-content}-#{$align-items}
+
+			@media screen and (max-width: $mobile-max-width)
+				@each $flex-direction in $flex-directions
+					@each $justify-content in $justified-contents
+						@each $align-items in $aligned-items
+							@if $flex-direction == 'flex'
+								.#{$flex-direction}-#{$justify-content}-#{$align-items}
+									flex-direction: column
+
+			@for $i from 1 through 50 // total classes
+				$j: $i * 5 // step
+
+				.ws#{$j}
+					height: #{$j}px
+
+				.vws#{$j}
+					width: #{$j}px
+
+				.fws#{$j}
+					@extend .ws#{$j}
+
+				.fvws#{$j}
+					@extend .vws#{$j}
+
+				.fiws#{$j}
+					@extend .ws#{$j}
+
+				.fivws#{$j}
+					@extend .vws#{$j}
+
+			@media screen and (max-width: $mobile-max-width)
+				@for $i from 1 through 50 // total classes
+					$j: $i * 5 // step
+
+					.fws#{$j}
+						width: #{$j}px
+
+					.fvws#{$j}
+						height: #{$j}px
+
+					.fiws#{$j}
+						width: #{math.div($j,2)}px
+
+					.fivws#{$j}
+						height: #{math.div($j,2)}px
+
+			@for $i from 1 through 6
+				.h#{$i}
+					font: list.nth($font-heading,1) list.nth($font-heading,2) list.nth($font-heading,3) #{(7 - $i) * 12}pt/list.nth($font-heading,5) list.nth($font-heading,6)
+
+			header
+				position: fixed
+				top: 0
+				right: 0
+				left: 0
+				z-index: 9000
+
+				#desktop
+					position: fixed
+					top: 0
+					right: 0
+					left: 0
+					display: flex
+					flex-direction: row
+					justify-content: space-between
+					align-items: center
+					padding: 0 50px
+					background: map.get($background,'1')
+					transform: translate(0,-100%)
+					box-shadow: 0 0 10px 5px #0003
+
+					.logo-header
+						width: #{math.div($logo-width,3)}px
+						height: #{math.div($logo-height,3)}px
+						background: transparent url('/client/media/img/logo/logo.svg') 50% 50%/contain no-repeat padding-box border-box scroll
+						cursor: pointer
+
+					.btn-nav
+						@extend .row-space-evenly-center
+
+						padding: 7.5px
+						background-color: transparent
+						cursor: pointer
+
+						&:hover
+							background-color: map.get($background-hover,'2')
+
+						&:active
+							background-color: map.get($background-active,'2')
+
+						.ico
+							margin: 0 5px
+
+						.txt
+							margin: 0 5px
+							white-space: nowrap
+
+					.btn-nav-drop
+						outline: none
+
+						.btn
+							@extend .btn-nav
+
+							position: relative
+
+							.cnt
+								position: absolute
+								right: 0
+								padding: 0
+								opacity: 0
+								background-color: map.get($background,'2')
+								transform: translate(0,-100%)
+								box-shadow: 0 0 10px 5px #0003
+								z-index: -10
+
+								.item
+									@extend .row-left-center
+
+									min-width: 125px
+									padding: 5px 15px
+									cursor: pointer
+
+									&:hover
+										background-color: map.get($background-hover,'2')
+
+									.ico
+										margin: 0 5px
+
+									.txt
+										margin: 0 5px
+
+					.selected
+						background-color: map.get($background-hover,'2') !important
+						cursor: default !important
+
+				#mobile
+					display: none
+
+			#header-search
+				@extend .row-center-center
+
+				background-color: map.get($background,'2')
+
+				#input-header-search
+					padding: 10px
+					background-color: transparent !important
+
+					&:hover
+						background-color: transparent !important
+
+					&:focus
+						background-color: transparent !important
+						color: #ffff
+
+				#btn-header-search
+					padding: 10px
+
+					&:hover
+						background-color: map.get($background-hover,'2')
+
+					&:active
+						background-color: map.get($background-active,'2')
+
+			#header-area
+				position: fixed
+				top: 0
+				right: 0
+				left: 0
+				height: $header-hover-area
+				z-index: 8999
+
+			main
+				section
+					padding: 100px
+
+				#intro-bg
+					position: relative
+					height: 100vh
+					padding: 0
+					background: transparent none 50% 50%/cover no-repeat padding-box border-box scroll
+
+				#intro
+					@include cross-v('background','radial-gradient(circle farthest-corner at top left,#{map.get($background,1)},transparent)')
+
+					@extend .flex-space-between-flex-end
+
+					position: absolute
+					top: 0
+					right: 0
+					bottom: 0
+					left: 0
+					padding: 100px
+					background-color: transparent
+					z-index: 0
+
+					@for $i from 1 through 6
+						.intro-h#{$i}
+							font: list.nth($font-heading,1) list.nth($font-heading,2) list.nth($font-heading,3) #{(7 - $i) * 14}pt/list.nth($font-heading,5) list.nth($font-heading,6)
+							text-shadow: 0 0 15px #0008
+
+				.btn-ico
+					@extend .row-space-evenly-center
+
+					position: relative
+					font-size: 20pt
+					padding: 20px 20px 20px 60px
+					background-color: map.get($background-accent,'0')
+					transition: $transition-btn
+					cursor: pointer
+
+					&:hover
+						padding: 20px 60px 20px 20px
+						background-color: map.get($background-accent,'2')
+
+						.ico
+							opacity: 0
+
+						.show
+							opacity: 1
+
+					&:active
+						background-color: map.get($background-accent,'1')
+
+					.ico
+						position: absolute
+						left: 20px
+						margin: 0 5px
+						opacity: 1
+
+					.txt
+						margin: 0 5px
+
+					.show
+						position: absolute
+						right: 20px
+						margin: 0 5px
+						opacity: 0
+
+				.btn-ico-show
+					@extend .row-space-evenly-center
+
+					position: relative
+					font-size: 20pt
+					padding: 20px 20px 20px 60px
+					background-color: map.get($background-accent,'0')
+					transition: $transition-btn
+					cursor: pointer
+
+					&:hover
+						padding: 20px 60px 20px 20px
+						background-color: map.get($background-accent,'2')
+
+						.ico
+							opacity: 0
+
+						.show
+							opacity: 1
+
+					&:active
+						background-color: map.get($background-accent,'1')
+
+					.ico
+						position: absolute
+						left: 20px
+						margin: 0 5px
+						opacity: 1
+
+					.txt
+						margin: 0 5px
+
+					.show
+						position: absolute
+						right: 20px
+						margin: 0 5px
+						opacity: 0
+
+			footer
+				padding: 50px 100px
+				background: map.get($background,'-2')
+
+				.logo-footer
+					width: #{math.div($logo-width,3)}px
+					height: #{math.div($logo-height,3)}px
+					background: transparent url('/client/media/img/logo/logo.svg') 50% 50%/contain no-repeat padding-box border-box scroll
+					cursor: pointer
+
+				.btn-footer
+					@extend .row-space-evenly-center
+
+					font-size: 22pt !important
+					cursor: pointer
+
+					.ico
+						margin: 0 5px
+
+					.txt
+						font-size: 18pt	
+						margin: 0 5px
+
+			input
+				@include input()
+
+			.link
+				text-decoration: none
+				color: $color-accent
+				cursor: pointer
+
+				&:hover
+					text-decoration: underline
+
+			.link-blank-ico
+				font-size: 10pt
+				line-height: 0.5em
+				vertical-align: baseline
+				position: relative
+				top: -0.4em
+
+			.desktop
+				display: initial
+
+			.mobile
+				display: none
+
+			@media screen and (max-width: $mobile-max-width)
+				.desktop
+					display: none
+
+				.mobile
+					display: initial
+
+			.hover
+				opacity: 0
+
+				&:hover
+					opacity: 1
+
+			@media screen and (max-width: $mobile-max-width)
+				.hover
+					opacity: 1
+
+			.nowrap
+				white-space: nowrap
+
+			.type
+				opacity: 0
+
+				&::after
+					content: '|'
+					font-weight: 100
+					animation: blink 800ms cubic-bezier(0,0,1,1) 0ms infinite normal none running
+
+			@keyframes blink
+				0%
+					opacity: 0
+
+				24%
+					opacity: 0
+
+				25%
+					opacity: 1
+
+				75%
+					opacity: 1
+
+				76%
+					opacity: 0
+
+				100%
+					opacity: 0
+
+			.delay
+				opacity: 0
+				transition: $transition-delay
+
+			// #cnt (indent)
+		//body (indent)
+	// html (indent)
+
+@media screen and (max-width: $mobile-max-width)
+	html
+		body
+			#cnt
+				header
+					#desktop
+						display: none
+
+					#mobile
+						display: flex
+
+				main
+					#intro
+						@include flexbox('flex','space-between','center')
+
+						padding: 75px 10px
+
+						@for $i from 1 through 6
+							.intro-h#{$i}
+								font-size: #{(7 - $i) * 11}pt
+
+				footer
+					padding: 25px
+
+				// #cnt (indent)
+			// body (indent)
+		// html (indent)

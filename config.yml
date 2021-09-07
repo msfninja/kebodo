@@ -1,0 +1,26 @@
+---
+app:
+  name: "Kebodo"
+  lname: "Kebodo"
+  desc: "A custom keyboard builder."
+  version: "0.0.0"
+  release: "0.0.0-alpha"
+  nav:
+  - name: "Home"
+    icon: "house"
+    path: "/"
+    nav: true
+  - name: "Builder"
+    icon: "bricks"
+    path: "/builder"
+    nav: true
+  - name: "Assets"
+    icon: "keyboard"
+    path: "/assets"
+    nav: true
+  - name: "Discussions"
+    icon: "chat-left"
+    path: "https://github.com/msfninja/kebodo/discussions"
+    nav: false
+server:
+  port: '85'
